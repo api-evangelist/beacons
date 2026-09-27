@@ -1,23 +1,64 @@
 aid: beacons
+
 name: Beacons
-description: 'Beacons is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+
+description: 'Beacons provides a platform for creators to build mobile websites, link-in-bio pages, and monetization tools. It offers customizable landing pages, e‑commerce integration, and analytics, helping creators grow their audience and revenue through a single, easy‑to‑use interface.'
+
 url: https://raw.githubusercontent.com/api-evangelist/beacons/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-27 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-09-27'
+
 modified: '2026-09-27'
+
 tags:
 - Company
-apis: []
+- Mobile
+- Creators
+- LinkInBio
+- Monetization
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: LLMsTxt
+  url: llms/beacons-llms.txt
+- type: WellKnown
+  url: well-known/beacons-well-known.yml
+- type: Hosts
+  url: hosts/beacons-hosts.yml
+- type: Vendors
+  url: vendors/beacons-vendors.yml
+- type: DomainSecurity
+  url: security/beacons-domain-security.yml
 - type: Website
-  url: https://www.nasdaqprivatemarket.com/
+  url: https://beacons.ai/
+
+apis: []
+
+x-coverage:
+  state: unreadable
+  reason: js-rendered-docs
+  detail: Main site returns 403 and docs are not publicly accessible.
+  evidence:
+    - url: https://beacons.ai
+      status: 403
+  checked: '2026-09-27'
+x-enrichment:
+  date: '2026-09-27'
+  status: enriched
+  artifacts_added: 9
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local
